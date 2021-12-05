@@ -1,0 +1,21 @@
+server:
+  port: 9090
+
+spring:
+  activemq:
+    broker-url: tcp://localhost:61616
+    in-memory: true
+    non-blocking-redelivery: true
+    packages:
+      trust-all: true
+  jms:
+    listener:
+      acknowledge-mode: auto
+      auto-startup: true
+
+camel:
+  springboot:
+    main-run-controller: true
+  component:
+    activemq:
+      broker-url: tcp://localhost:61616
